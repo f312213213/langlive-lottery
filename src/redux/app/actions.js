@@ -1,5 +1,4 @@
 import ActionTypes from './ActionTypes'
-import actions from '../actions'
 
 export const showSnackbar = (type, message) => {
   return {

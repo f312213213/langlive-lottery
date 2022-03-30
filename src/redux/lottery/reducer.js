@@ -5,9 +5,10 @@ import FAKE from '../../FAKE'
 
 export const defaultState = {
   time: 0,
-  candidate: FAKE,
+  candidate: [],
   result: [],
-  isCountDown: false
+  isCountDown: false,
+  isSettingUser: true
 }
 
 export default produce(
@@ -19,6 +20,13 @@ export default produce(
       }
       case ActionTypes.COUNT_DOWN: {
         draft.isCountDown = !draft.isCountDown
+        break
+      }
+      case ActionTypes.USER_SET: {
+        const { fakeUser } = action.payload
+        draft.candidate = []
+        draft.candidate.push(...fakeUser)
+        draft.isSettingUser = false
         break
       }
       case ActionTypes.GET_RESULT: {

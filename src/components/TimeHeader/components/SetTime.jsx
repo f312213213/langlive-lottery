@@ -11,6 +11,7 @@ function SetTime () {
     const inputTime = parseInt(timeRef.current.value)
     if (inputTime >= 0) {
       dispatch(actions.app.showSnackbar('success', '設定成功！', dispatch))
+      timeRef.current.value = ''
       return dispatch(actions.lottery.setTime(inputTime))
     }
     return dispatch(actions.app.showSnackbar('error', '請確認輸入正確！', dispatch))

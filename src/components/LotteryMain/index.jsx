@@ -1,9 +1,10 @@
 import React from 'react'
-import PeopleWindow from './PeopleWindow'
-import LotteryButton from './LotteryButton'
 import { useSelector } from 'react-redux'
 
-function MiddlePart () {
+import PeopleWindow from './PeopleWindow'
+import LotteryButton from './LotteryButton'
+
+function LotteryMain () {
   const candidate = useSelector(state => state.lottery.candidate)
   const result = useSelector(state => state.lottery.result)
   return (
@@ -15,4 +16,4 @@ function MiddlePart () {
   )
 }
 
-export default MiddlePart
+export default LotteryMain

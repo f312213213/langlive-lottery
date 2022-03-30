@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import actions from '../../../redux/actions'
+import actions from '../../redux/actions'
 
 function LotteryButton () {
   const dispatch = useDispatch()

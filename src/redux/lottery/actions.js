@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 import ActionTypes from './ActionTypes'
 import actions from '../actions'
 
@@ -45,5 +47,19 @@ export const drawLottery = () => (dispatch, getState) => {
   dispatch({
     type: ActionTypes.GET_RESULT,
     payload: { randomNum }
+  })
+}
+
+export const setFakeUser = (userNum) => (dispatch, getState) => {
+  const generateFakeUser = () => {
+    return {
+      name: faker.name.firstName() + ' ' + faker.name.lastName(),
+      id: faker.git.commitSha()
+    }
+  }
+  const fakeUser = Array.from({ length: userNum }, generateFakeUser)
+  return dispatch({
+    type: ActionTypes.USER_SET,
+    payload: { fakeUser }
   })
 }
