@@ -1,20 +1,30 @@
 export default [
   {
-    name: 'Leo'
+    name: 'Leo',
+    id: 1
   },
   {
-    name: 'Tina'
+    name: 'Tina',
+    id: 2
   },
   {
-    name: 'David'
+    name: 'David',
+    id: 3
   },
   {
-    name: 'Kevin'
+    name: 'Kevin',
+    id: 4
   },
   {
-    name: 'Wing'
+    name: 'Wing',
+    id: 5
   },
   {
-    name: 'Zoey'
+    name: 'Zoey',
+    id: 6
+  },
+  {
+    name: 'Damon',
+    id: 7
   }
 ]
