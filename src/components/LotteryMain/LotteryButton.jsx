@@ -10,7 +10,7 @@ function LotteryButton () {
     dispatch(actions.lottery.gameStart())
   }
   return (
-      <button className={'bg-indigo-200 hidden sm:block hover:bg-indigo-300 transition p-4 rounded disabled:bg-indigo-50'} disabled={isCountDown} onClick={handleStart} >
+      <button className={'bg-indigo-200 hover:bg-indigo-300 transition p-4 rounded disabled:bg-indigo-50'} disabled={isCountDown} onClick={handleStart} >
         抽獎！
       </button>
   )

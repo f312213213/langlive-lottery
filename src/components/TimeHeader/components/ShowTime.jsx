@@ -9,7 +9,7 @@ const ShowTime = () => {
 
   return (
       <div className={'flex flex-col space-y-3'}>
-        <h1 className={'text-right'}>剩餘時間</h1>
+        <h1 className={'text-center sm:text-right'}>剩餘時間</h1>
         <div className={'text-red-500 text-4xl'}>
           {renderTime()}
         </div>

@@ -18,7 +18,7 @@ function SetTime () {
   }
   return (
       <div className={'flex flex-col space-y-3'}>
-        <label htmlFor={'setTime'}>設定倒數秒數</label>
+        <h1 className={'text-center sm:text-left'}>設定倒數秒數</h1>
         <div>
           <input id={'setTime'} type="number" placeholder={'倒數幾秒鐘？'} ref={timeRef} className={'w-28 p-2.5 outline-none ring-2 ring-indigo-200 rounded rounded-r-none'}/>
           <button className={'rounded rounded-l-none bg-indigo-200 hover:bg-indigo-300 transition text-center p-3 disabled:bg-indigo-50 disabled:ring-2 disabled:ring-indigo-200 disabled:p-2.5'} disabled={isCountDown} onClick={handleSetTime}>設定！</button>
