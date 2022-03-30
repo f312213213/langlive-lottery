@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start && rm build/static/js/*.map && rm build/static/css/*.map",
+    "start": "react-scripts start && rm build/static/js/*.map && rm build/static/css/*.map && firebase deploy",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

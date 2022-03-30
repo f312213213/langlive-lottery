@@ -5,7 +5,8 @@ export const showSnackbar = (type, message) => {
     type: ActionTypes.SHOW_SNACKBAR,
     payload: {
       type: type,
-      message: message
+      message: message,
+      compare: Math.random()
     }
   }
 }

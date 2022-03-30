@@ -18,5 +18,5 @@ function Main () {
   )
 }
 // TODO
-// 響應式、snackbar 重新計時
+// 響應式
 export default Main

@@ -8,13 +8,22 @@ function SnackbarBase () {
   const dispatch = useDispatch()
   const snackbarStatus = useSelector(state => state.app.snackbar)
 
-  const autoHide = setTimeout(() => {
-    dispatch(actions.app.closeSnackbar())
-  }, 3000)
+  React.useEffect(() => {
+    const autoHide = setTimeout(() => {
+      dispatch(actions.app.closeSnackbar())
+    }, 3000)
+    return () => {
+      clearTimeout(autoHide)
+    }
+  }, [snackbarStatus.compare])
+
   return (
       <>
         {snackbarStatus.message}
-        <button onClick={() => dispatch(actions.app.closeSnackbar())}>
+        <button onClick={() => {
+          console.log('click')
+          dispatch(actions.app.closeSnackbar())
+        }}>
           <FaTimes />
         </button>
       </>

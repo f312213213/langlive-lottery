@@ -1,45 +1,42 @@
 import ActionTypes from './ActionTypes'
+import produce from 'immer'
 
-const defaultState = {
+export const defaultState = {
   snackbar: {
     show: false,
     type: '',
-    message: ''
+    message: '',
+    compare: ''
   },
   backdrop: false
 }
 
-export default (state = defaultState, action) => {
-  switch (action.type) {
-    case ActionTypes.SHOW_BACKDROP: {
-      return {
-        ...state,
-        backdrop: true
+export default produce(
+  (draft = defaultState, action) => {
+    switch (action.type) {
+      case ActionTypes.SHOW_BACKDROP: {
+        draft.backdrop = true
+        break
       }
-    }
-    case ActionTypes.CLOSE_BACKDROP: {
-      return {
-        ...state,
-        backdrop: false
+      case ActionTypes.CLOSE_BACKDROP: {
+        draft.backdrop = false
+        break
       }
-    }
-    case ActionTypes.SHOW_SNACKBAR: {
-      return {
-        ...state,
-        snackbar: {
+      case ActionTypes.SHOW_SNACKBAR: {
+        draft.snackbar = {
           ...action.payload,
           show: true
         }
+        break
+      }
+      case ActionTypes.CLOSE_SNACKBAR: {
+        draft.snackbar = defaultState.snackbar
+        break
+      }
+      default: {
+        break
       }
     }
-    case ActionTypes.CLOSE_SNACKBAR: {
-      return {
-        ...state,
-        snackbar: defaultState.snackbar
-      }
-    }
-    default: {
-      return state
-    }
-  }
-}
+  },
+  defaultState
+)

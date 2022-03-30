@@ -9,6 +9,7 @@ function SetFakeUser () {
   const isSettingUser = useSelector(state => state.lottery.isSettingUser)
 
   const handleGenerateFakeUser = () => {
+    if (numRef.current.value > 1000) return dispatch(actions.app.showSnackbar('error', '刀下留人啊！'))
     if (numRef.current.value > 0) return dispatch(actions.lottery.setFakeUser(numRef.current.value))
     return dispatch(actions.app.showSnackbar('error', '請確認輸入正確！'))
   }
