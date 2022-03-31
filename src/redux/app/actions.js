@@ -16,3 +16,16 @@ export const closeSnackbar = () => {
     type: ActionTypes.CLOSE_SNACKBAR
   }
 }
+
+export const showPersonDialog = (data) => (dispatch, getState) => {
+  return dispatch({
+    type: ActionTypes.SHOW_PERSON_DIALOG,
+    payload: { data }
+  })
+}
+
+export const closePersonDialog = () => (dispatch, getState) => {
+  return dispatch({
+    type: ActionTypes.CLOSE_PERSON_DIALOG
+  })
+}

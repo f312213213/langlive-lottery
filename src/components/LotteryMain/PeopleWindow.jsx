@@ -13,12 +13,13 @@ function PeopleWindow ({ people, type }) {
       key: PropTypes.string,
       style: PropTypes.object
     }
+    const renderClass = () => {
+      return index % 2 === 0
+        ? 'bg-indigo-200'
+        : 'bg-indigo-100'
+    }
     return (
-        <li key={key} style={style} className={'h-full w-full flex items-center justify-center text-lg even:bg-indigo-100 odd:bg-indigo-200 hover:bg-indigo-300 transition relative'}>
-          {
-            people[index] && <Person key={people[index].id} name={people[index].name} type={type} sort={index}/>
-          }
-        </li>
+        <Person key={key} style={style} user={people[index]} type={type} sort={index} className={renderClass()}/>
     )
   }
 

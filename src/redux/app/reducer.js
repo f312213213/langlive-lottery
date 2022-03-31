@@ -8,7 +8,13 @@ export const defaultState = {
     message: '',
     compare: ''
   },
-  backdrop: false
+  backdrop: false,
+  personDialog: {
+    show: false,
+    name: '',
+    photoURL: '',
+    email: ''
+  }
 }
 
 export default produce(
@@ -31,6 +37,16 @@ export default produce(
       }
       case ActionTypes.CLOSE_SNACKBAR: {
         draft.snackbar = defaultState.snackbar
+        break
+      }
+      case ActionTypes.SHOW_PERSON_DIALOG: {
+        const { data } = action.payload
+        console.log(data)
+        draft.showPersonDialog = data
+        break
+      }
+      case ActionTypes.CLOSE_PERSON_DIALOG: {
+        draft.showPersonDialog = defaultState.personDialog
         break
       }
       default: {
