@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import SnackbarBase from './SnackbarBase'
 
-const CLASS = 'fixed sm:w-80 w-11/12 p-4 left-0 bottom-0 m-4 rounded text-white flex justify-between items-center z-50 '
+const CLASS = 'fixed sm:w-80 w-11/12 p-4 left-0 bottom-0 m-4 rounded text-white flex justify-between items-center z-50 shadow-lg'
 function SnackbarClass () {
   const snackbarStatus = useSelector(state => state.app.snackbar)
 

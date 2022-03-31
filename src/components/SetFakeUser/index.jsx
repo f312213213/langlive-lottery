@@ -16,7 +16,7 @@ function SetFakeUser () {
       <>
         {
             isSettingUser &&
-            <div className={'fixed w-full h-screen z-40 bg-gray-700 bg-opacity-80 flex justify-center items-center'}>
+            <div className={'fixed w-full h-screen z-40 bg-gray-700 bg-opacity-80 flex justify-center items-center s'}>
               <div className={'w-4/5 md:w-2/5 p-4 flex flex-col space-y-3 justify-center items-center bg-indigo-200 rounded-2xl'}>
                 <h1>要設定幾個假用戶</h1>
                 <input type="number" placeholder={'輸入用戶數量'} ref={numRef} className={'text-center p-2.5 outline-none ring-2 ring-indigo-200 rounded'}/>

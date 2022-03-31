@@ -1,8 +1,6 @@
 import ActionTypes from './ActionTypes'
 import produce from 'immer'
 
-import FAKE from '../../FAKE'
-
 export const defaultState = {
   time: 0,
   candidate: [],

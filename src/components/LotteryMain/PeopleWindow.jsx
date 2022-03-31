@@ -24,7 +24,7 @@ function PeopleWindow ({ people, type }) {
   }
 
   return (
-      <ul className={'border-2 w-full sm:w-5/12 h-48 sm:h-96 divide-y'}>
+      <ul className={'border-2 w-full sm:w-5/12 h-48 sm:h-96 divide-y shadow-lg'}>
         {
           people?.length > 0
             ? <Virtualized rowRenderer={AllRows} list={people} />
