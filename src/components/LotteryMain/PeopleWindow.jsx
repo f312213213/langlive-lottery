@@ -19,7 +19,7 @@ function PeopleWindow ({ people, type }) {
         : 'bg-indigo-100'
     }
     return (
-        <Person key={key} style={style} user={people[index]} type={type} sort={index} className={renderClass()}/>
+        <Person key={people[index].id} style={style} user={people[index]} type={type} sort={index} className={renderClass()}/>
     )
   }
 
