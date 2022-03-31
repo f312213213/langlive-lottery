@@ -8,26 +8,31 @@ function DialogBase () {
   const [isLoad, setIsLoad] = React.useState(false)
   const dispatch = useDispatch()
   const personDialogStatus = useSelector(state => state.app.personDialog)
+  const wrapperRef = React.useRef(null)
   const closeDialog = () => {
     setIsLoad(false)
     return dispatch(actions.app.closePersonDialog())
   }
+  const handleOutsideClick = (e) => {
+    if (e.target === wrapperRef.current) {
+      return closeDialog()
+    }
+  }
   return (
-      <div className={'fixed w-full h-screen z-40 bg-gray-700 bg-opacity-80 flex justify-center items-center z-40'}>
+      <div onClick={(e) => handleOutsideClick(e)} ref={wrapperRef} className={'fixed w-full h-screen z-40 bg-gray-700 bg-opacity-80 flex justify-center items-center z-40'}>
         <div className=" w-11/12 sm:max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4 relative z-50">
           {
             !isLoad &&
               <div className={'w-full h-56 animate-pulse bg-gray-200 object-cover object-center absolute z'}/>
           }
-           <img className="w-full h-56 object-cover object-center"
-                onLoad={() => {
-                  setIsLoad(true)
-                }
-           }
+           <img
+                className="w-full h-56 object-cover object-center"
+                onLoad={() => { setIsLoad(true) }}
                 style ={isLoad ? {} : { display: 'hidden' }}
                 src={personDialogStatus.photoURL}
-                alt="avatar" />
-          <FaTimes className={'absolute right-4 top-4 text-white text-2xl cursor-pointer'} onClick={closeDialog}/>
+                alt="avatar"
+           />
+          <FaTimes className={'absolute right-4 top-4 text-indigo-700 text-2xl cursor-pointer'} onClick={closeDialog}/>
           <div className="py-4 px-6">
             <h1 className="text-2xl font-bold text-gray-800">{personDialogStatus.name}</h1>
             <p className="py-2 text-lg text-gray-700">{personDialogStatus.introduction}</p>
