@@ -13,13 +13,14 @@
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "react-virtualized": "^9.22.3",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start && rm build/static/js/*.map && rm build/static/css/*.map && firebase deploy",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build && rm build/static/js/*.map && rm build/static/css/*.map && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

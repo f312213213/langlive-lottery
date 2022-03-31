@@ -17,6 +17,4 @@ function Main () {
       </>
   )
 }
-// TODO
-// 響應式
 export default Main
