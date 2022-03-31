@@ -56,7 +56,8 @@ export const setFakeUser = (userNum) => (dispatch, getState) => {
       name: faker.name.firstName() + ' ' + faker.name.lastName(),
       id: faker.git.commitSha(),
       email: faker.internet.email(),
-      photoURL: faker.image.people(500, 500)
+      photoURL: faker.image.people(300, 300),
+      introduction: faker.lorem.sentence()
     }
   }
   const fakeUser = Array.from({ length: userNum }, generateFakeUser)

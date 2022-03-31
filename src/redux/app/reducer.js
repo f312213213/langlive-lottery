@@ -41,12 +41,14 @@ export default produce(
       }
       case ActionTypes.SHOW_PERSON_DIALOG: {
         const { data } = action.payload
-        console.log(data)
-        draft.showPersonDialog = data
+        draft.personDialog = {
+          show: true,
+          ...data
+        }
         break
       }
       case ActionTypes.CLOSE_PERSON_DIALOG: {
-        draft.showPersonDialog = defaultState.personDialog
+        draft.personDialog = defaultState.personDialog
         break
       }
       default: {
