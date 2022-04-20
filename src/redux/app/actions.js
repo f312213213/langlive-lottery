@@ -29,3 +29,9 @@ export const closePersonDialog = () => (dispatch, getState) => {
     type: ActionTypes.CLOSE_PERSON_DIALOG
   })
 }
+
+export const toggleBackdrop = () => {
+  return {
+    type: ActionTypes.TOGGLE_BACKDROP
+  }
+}

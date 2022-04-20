@@ -51,6 +51,10 @@ export default produce(
         draft.personDialog = defaultState.personDialog
         break
       }
+      case ActionTypes.TOGGLE_BACKDROP: {
+        draft.backdrop = !draft.backdrop
+        break
+      }
       default: {
         break
       }

@@ -61,9 +61,9 @@ export const setFakeUser = (userNum) => (dispatch, getState) => {
     }
   }
   const fakeUser = Array.from({ length: userNum }, generateFakeUser)
-  dispatch(actions.app.showSnackbar('success', '設定成功！'))
-  return dispatch({
+  dispatch({
     type: ActionTypes.USER_SET,
     payload: { fakeUser }
   })
+  return dispatch(actions.app.showSnackbar('success', '設定成功！'))
 }
